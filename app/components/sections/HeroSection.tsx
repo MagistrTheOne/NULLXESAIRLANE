@@ -58,10 +58,10 @@ export function HeroSection() {
         {/* TOP CHIP */}
         <motion.div
           style={{ rotateX, rotateY, x: translateX, y: translateY }}
-          className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-black/60 px-4 py-1 text-[0.65rem] uppercase tracking-[0.18em] text-white/70 shadow-[0_0_40px_rgba(0,0,0,1)]"
+          className="inline-flex items-center gap-3 rounded-full border border-zinc-700/50 bg-black/70 px-4 py-1 text-[0.65rem] uppercase tracking-[0.18em] text-zinc-300 shadow-[0_0_40px_rgba(0,0,0,1)]"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_14px_white]" />
-          <span>UNIVERSE LOCATION - EVERY REALITY · 2026</span>
+          <span>UNIVERSE LOCATION - EVERY REALITY - 2026</span>
         </motion.div>
 
         {/* HERO TITLE */}

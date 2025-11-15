@@ -61,9 +61,9 @@ export function FleetSection() {
           {fleet.map((ship) => (
             <div
               key={ship.name}
-              className="glass-panel relative overflow-hidden bg-black/70 border-white/20 backdrop-blur-xl p-6 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.9)]"
+              className="glass-panel relative overflow-hidden bg-black/80 border-zinc-800/50 backdrop-blur-xl p-6 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.9)]"
             >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_70%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.01),transparent_70%)]" />
 
               <div className="relative flex flex-col gap-4">
 

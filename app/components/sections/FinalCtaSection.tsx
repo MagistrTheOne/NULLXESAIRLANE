@@ -5,7 +5,7 @@ import { PrimaryCta } from "../PrimaryCta";
 export function FinalCtaSection() {
   return (
     <section className="relative flex min-h-screen items-center justify-center bg-dark px-4 pb-16 pt-24">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.4),#020617_80%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.6),#000000_80%)]" />
       <div className="relative z-10 flex w-full max-w-5xl flex-col items-center gap-8 text-center">
         <p className="text-[0.7rem] uppercase tracking-[0.2em] text-zinc-500">
           FINAL CALL - NULLXES AIRLANE 2026

@@ -6,7 +6,7 @@ export function ConceptSection() {
       id="universe-routes"
       className="relative flex min-h-screen items-center justify-center bg-dark px-4 py-16 sm:py-20"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(15,23,42,0.9),#020617_65%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.9),#000000_65%)]" />
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-zinc-500/60 to-transparent" />
       <div className="relative z-10 flex w-full max-w-6xl flex-col gap-10 lg:flex-row">
         <div className="flex-1 space-y-6">
@@ -37,7 +37,7 @@ export function ConceptSection() {
         </div>
         <div className="flex-1 space-y-6">
           <div className="glass-panel relative overflow-hidden p-6">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,244,245,0.08),transparent_60%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.02),transparent_60%)]" />
             <div className="relative flex flex-wrap items-center justify-between gap-4">
               <div className="space-y-2">
                 <p className="text-[0.7rem] uppercase tracking-[0.2em] text-zinc-400">

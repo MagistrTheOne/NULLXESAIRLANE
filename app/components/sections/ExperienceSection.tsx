@@ -47,8 +47,8 @@ export function ExperienceSection() {
           </div>
 
           {/* Card 2 */}
-          <div className="glass-panel relative overflow-hidden p-5 bg-black/50 border-white/10 backdrop-blur-2xl">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_70%)]" />
+          <div className="glass-panel relative overflow-hidden p-5 bg-black/60 border-zinc-800/50 backdrop-blur-2xl">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.01),transparent_70%)]" />
             <div className="relative space-y-2">
               <p className="text-[0.7rem] uppercase tracking-[0.2em] text-white/40">
                 ZERO-NOISE ZONES
@@ -76,7 +76,7 @@ export function ExperienceSection() {
         </div>
 
         {/* BOTTOM CARD */}
-        <div className="glass-panel relative mt-4 flex flex-col items-center justify-between gap-4 bg-black/60 border-white/10 backdrop-blur-3xl px-6 py-5 sm:flex-row">
+        <div className="glass-panel relative mt-4 flex flex-col items-center justify-between gap-4 bg-black/70 border-zinc-800/50 backdrop-blur-3xl px-6 py-5 sm:flex-row">
           <div className="relative space-y-1 text-center sm:text-left">
             <p className="text-[0.7rem] uppercase tracking-[0.2em] text-white/40">
               CREATED BY MAGISTRTHEONE
@@ -90,11 +90,11 @@ export function ExperienceSection() {
           <button
             type="button"
             onClick={() => window.open(TELEGRAM_URL, "_blank", "noopener,noreferrer")}
-            className="glass-chip inline-flex items-center gap-2 px-4 py-2 text-[0.65rem] uppercase tracking-[0.18em] bg-black/70 border-white/20 text-white/80 hover:text-white backdrop-blur-xl transition"
+            className="glass-chip inline-flex items-center gap-2 px-4 py-2 text-[0.65rem] uppercase tracking-[0.18em] bg-black/80 border-zinc-700/50 text-zinc-300 hover:text-zinc-100 backdrop-blur-xl transition"
           >
             <span>Talk on Telegram</span>
             <span className="h-3 w-px bg-white/20" />
-            <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-white text-[0.55rem] text-black">
+            <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-zinc-600 text-[0.55rem] text-zinc-100">
               ↗
             </span>
           </button>
