@@ -14,8 +14,8 @@ export function NavBar() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-40 flex justify-center px-4 pt-5">
       <div className="pointer-events-auto glass-panel flex w-full max-w-6xl items-center justify-between gap-6 rounded-full border border-zinc-800/80 bg-black/75 px-5 py-3">
-        <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-950/70 ring-1 ring-zinc-600/70">
+        <div className="flex items-center gap-2" data-logo>
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-950/70 ring-1 ring-zinc-600/70 cursor-pointer hover:ring-zinc-400/70 transition-all duration-300 hover:scale-110">
             <span className="text-xs font-semibold tracking-[0.12em]">
               NXS
             </span>
