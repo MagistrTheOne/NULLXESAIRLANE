@@ -33,20 +33,6 @@ export function HeroSection() {
       id="concept"
       className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 sm:px-6 pt-28 sm:pt-32 pb-20 sm:pb-24 bg-dark text-white"
     >
-
-      {/* FULLSCREEN BACKGROUND - AIRLANE, NO STRETCH */}
-      <div className="absolute inset-0 -z-10 flex items-center justify-center bg-black">
-        <div className="relative h-full w-full">
-          <Image
-            src="/airlane.png"
-            alt="NULLXES AIRLANE - Nightcraft"
-            fill
-            priority
-            className="object-contain object-center md:object-cover"
-          />
-        </div>
-      </div>
-
       <SpiderVFX />
 
       {/* MAIN HERO CONTENT */}
@@ -67,7 +53,7 @@ export function HeroSection() {
         {/* HERO TITLE */}
         <motion.h1
           style={{ rotateX, rotateY, x: translateX, y: translateY }}
-          className="mt-10 text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-white drop-shadow-[0_0_30px_rgba(0,0,0,1)]"
+          className="mt-10 text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-white drop-shadow-[0_0_30px_rgba(0,0,0,1)]"
         >
           We Fly Every Reality We fly in Space
         </motion.h1>
@@ -75,7 +61,7 @@ export function HeroSection() {
         {/* SUBTITLE */}
         <motion.p
           style={{ rotateX, rotateY, x: translateX, y: translateY }}
-          className="mt-6 max-w-2xl text-white/70 text-sm sm:text-lg leading-relaxed"
+          className="mt-6 max-w-2xl text-white/70 text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed"
         >
           The premium  airline engineered beyond physics, fear and borders.{" "}
           <span className="text-white">
@@ -86,7 +72,7 @@ export function HeroSection() {
         {/* PRIMARY CTA */}
         <motion.div
           style={{ rotateX, rotateY, x: translateX, y: translateY }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
+          className="mt-8 xs:mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <PrimaryCta label="BOOKiNG - UNIVERSE ENTRY" />
         </motion.div>
@@ -94,16 +80,16 @@ export function HeroSection() {
         {/* TAGS */}
         <motion.div
           style={{ rotateX, rotateY, x: translateX, y: translateY }}
-          className="mt-8 flex flex-wrap justify-center gap-3 text-[0.65rem] uppercase tracking-[0.18em] text-white/50"
+          className="mt-6 xs:mt-8 flex flex-wrap justify-center gap-2 xs:gap-3 text-[0.6rem] xs:text-[0.65rem] uppercase tracking-[0.18em] text-white/50"
         >
           <span className="glass-chip px-3 py-1 bg-black/60 border-white/20">
-            LOCATION · UNIVERSAL / NO LIMITS
+            LOCATION · UNIVERSAL 
           </span>
           <span className="glass-chip px-3 py-1 bg-black/60 border-white/20">
-            YEAR · 2026 / DARK GLASS MODE
+            YEAR · 2026 
           </span>
           <span className="glass-chip px-3 py-1 bg-black/60 border-white/20">
-            ACCESS · EVERYONE / EVERY REALITY
+            ACCESS · EVERYONE 
           </span>
         </motion.div>
       </div>

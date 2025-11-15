@@ -18,8 +18,8 @@ body {
 .bg-dark {
   background-color: #000000;
   background-image:
-    radial-gradient(circle at 10% -10%, rgba(15, 23, 42, 0.85), transparent 60%),
-    radial-gradient(circle at 120% 110%, rgba(15, 23, 42, 0.8), transparent 65%);
+    radial-gradient(circle at 10% -10%, rgba(0, 0, 0, 0.9), transparent 60%),
+    radial-gradient(circle at 120% 110%, rgba(0, 0, 0, 0.85), transparent 65%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #f9fafb;
@@ -29,7 +29,7 @@ body {
 .glass-panel {
   background: rgba(0, 0, 0, 0.85);
   border-radius: 1.5rem;
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(24px);
   box-shadow:
     0 0 40px rgba(0, 0, 0, 0.9),
@@ -37,24 +37,24 @@ body {
 }
 
 .glass-chip {
-  background: rgba(3, 7, 18, 0.9);
+  background: rgba(0, 0, 0, 0.9);
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(18px);
 }
 
 /* Лёгкое холодное сияние для избранных зон */
 .hero-gradient {
   background:
-    radial-gradient(circle at 0% -20%, rgba(15, 23, 42, 0.95), transparent 55%),
-    radial-gradient(circle at 80% 120%, rgba(15, 23, 42, 0.9), transparent 65%),
+    radial-gradient(circle at 0% -20%, rgba(0, 0, 0, 0.95), transparent 55%),
+    radial-gradient(circle at 80% 120%, rgba(0, 0, 0, 0.9), transparent 65%),
     radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.96), #000000 60%);
 }
 
 /* Сетка — тёмная, строгая, но без ощущения "квадратной коробки" */
 .universe-grid {
   background-image: linear-gradient(
-      rgba(148, 163, 184, 0.16) 1px,
+      rgba(255, 255, 255, 0.08) 1px,
       rgba(0, 0, 0, 0.98) 1px
     );
   background-size: 100% 32px;

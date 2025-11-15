@@ -56,7 +56,7 @@ export function NavBar() {
             </span>
           </button>
           <span className="inline-flex items-center gap-1 text-[0.55rem] uppercase tracking-[0.18em] text-zinc-500 md:hidden">
-            <span className="h-1 w-1 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
+            <span className="h-1 w-1 rounded-full bg-zinc-500 shadow-[0_0_12px_rgba(255,255,255,0.5)]" />
             <span>UNIVERSE</span>
           </span>
         </div>

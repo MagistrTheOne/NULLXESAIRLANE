@@ -7,17 +7,17 @@ export function ConceptSection() {
       className="relative flex min-h-screen items-center justify-center bg-dark px-4 py-16 sm:py-20"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.9),#000000_65%)]" />
-      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-zinc-500/60 to-transparent" />
-      <div className="relative z-10 flex w-full max-w-6xl flex-col gap-10 lg:flex-row">
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent shadow-[0_1px_4px_rgba(0,0,0,0.8)]" />
+      <div className="relative z-10 flex w-full max-w-6xl flex-col gap-6 xs:gap-8 sm:gap-10 lg:flex-row">
         <div className="flex-1 space-y-6">
           <p className="text-[0.7rem] uppercase tracking-[0.2em] text-zinc-500">
             EVERYONE FLIES. EVERYWHERE. BEYOND.
           </p>
-          <h2 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl">
+          <h2 className="text-xl xs:text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-50 leading-tight">
             We do not ask who you are. We only ask where you want to go - even
-            if maps call it “off-limits”.
+            if maps call it "off-limits".
           </h2>
-          <p className="max-w-xl text-sm text-zinc-300">
+          <p className="max-w-xl text-xs xs:text-sm sm:text-base text-zinc-300 leading-relaxed">
             NULLXES AIRLANE is a universe-class airline born from a villain
             mindset and precision engineering. No borders, no polite ceilings,
             no regular routes. Just black glass cabins and flight paths through

@@ -33,25 +33,26 @@ export function FleetSection() {
       id="experience"
       className="relative flex min-h-screen items-center justify-center bg-dark px-4 sm:px-6 py-20 sm:py-24 overflow-hidden"
     >
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/18 to-transparent shadow-[0_1px_8px_rgba(0,0,0,0.95)] backdrop-blur-sm" />
       {/* PREMIUM BACKGROUND */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.85),#000000_95%)] backdrop-blur-2xl" />
 
-      <div className="relative z-10 w-full max-w-6xl space-y-12">
+      <div className="relative z-10 w-full max-w-6xl space-y-8 xs:space-y-10 sm:space-y-12">
 
         {/* HEADER */}
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-3 xs:gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
             <p className="text-[0.7rem] uppercase tracking-[0.2em] text-white/40">
               THE FLEET
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl leading-tight">
-              A line of ships built for villain-level calm  
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl font-semibold tracking-tight text-white leading-tight">
+              A line of ships built for villain-level calm
               and universe-scale reach.
             </h2>
           </div>
-          <p className="max-w-md text-sm text-white/70 leading-relaxed">
-            Each NXS vessel is a silent black capsule designed to erase noise, 
-            light and friction. You step in once - and step out in a different 
+          <p className="max-w-md text-xs xs:text-sm sm:text-base text-white/70 leading-relaxed">
+            Each NXS vessel is a silent black capsule designed to erase noise,
+            light and friction. You step in once - and step out in a different
             layer of reality.
           </p>
         </div>

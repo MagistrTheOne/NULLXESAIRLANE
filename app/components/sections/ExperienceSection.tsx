@@ -8,24 +8,25 @@ export function ExperienceSection() {
       id="contact"
       className="relative flex min-h-screen items-center justify-center bg-dark px-4 py-16 sm:py-20"
     >
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/12 to-transparent shadow-[0_1px_5px_rgba(0,0,0,0.85)] backdrop-blur-sm" />
       {/* Full black cinematic gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.8),#000000_80%)]" />
 
-      <div className="relative z-10 w-full max-w-6xl space-y-10">
+      <div className="relative z-10 w-full max-w-6xl space-y-6 xs:space-y-8 sm:space-y-10">
         {/* HEADER BLOCK */}
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-3 xs:gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
             <p className="text-[0.7rem] uppercase tracking-[0.2em] text-white/40">
               ONBOARD EXPERIENCE
             </p>
-            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+            <h2 className="text-xl xs:text-2xl sm:text-3xl font-semibold tracking-tight text-white leading-tight">
               Inside the cabin, the Universe is silent and the glass is darker
               than any night you remember.
             </h2>
           </div>
-          <p className="max-w-md text-sm text-white/60">
-            No noise. No chaos. No distractions.  
-            You keep the mission.  
+          <p className="max-w-md text-xs xs:text-sm sm:text-base text-white/60 leading-relaxed">
+            No noise. No chaos. No distractions.
+            You keep the mission.
             NULLXES keeps the silence.
           </p>
         </div>

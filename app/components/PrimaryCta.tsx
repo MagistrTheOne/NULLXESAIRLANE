@@ -13,9 +13,9 @@ export function PrimaryCta({ label }: PrimaryCtaProps) {
       onClick={() => {
         window.open(TELEGRAM_URL, "_blank", "noopener,noreferrer");
       }}
-      className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-zinc-100/10 bg-zinc-900/80 px-8 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-50 shadow-[0_0_60px_rgba(15,23,42,1)] transition-all hover:border-zinc-50/50 hover:bg-zinc-900 hover:shadow-[0_0_90px_rgba(244,244,245,0.55)]"
+      className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-zinc-800/50 bg-black/80 px-8 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-100 shadow-[0_0_60px_rgba(0,0,0,1)] transition-all hover:border-zinc-600/70 hover:bg-zinc-900 hover:shadow-[0_0_90px_rgba(255,255,255,0.2)]"
     >
-      <span className="absolute inset-0 bg-linear-to-r from-zinc-50/10 via-violet-400/10 to-sky-400/10 opacity-0 transition-opacity group-hover:opacity-100" />
+      <span className="absolute inset-0 bg-linear-to-r from-zinc-900/20 via-zinc-800/30 to-zinc-700/20 opacity-0 transition-opacity group-hover:opacity-100" />
       <span className="relative flex items-center gap-3">
         <span>{label}</span>
         <span className="h-px w-8 bg-linear-to-r from-zinc-200/40 via-zinc-50 to-transparent" />

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export function SpiderVFX() {
   const [visible, setVisible] = useState(false);
+  const [spiderPosition, setSpiderPosition] = useState(0);
 
   useEffect(() => {
     const showDuration = 22000; // 22 sec visible
@@ -11,6 +12,25 @@ export function SpiderVFX() {
 
     const activate = () => {
       setVisible(true);
+      setSpiderPosition(0); // Reset spider position
+
+      // Spider descent animation
+      const descentDuration = 8000; // 8 seconds to descend
+      const startTime = Date.now();
+
+      const animateSpider = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / descentDuration, 1);
+        const easeProgress = 1 - Math.pow(1 - progress, 3); // Ease-out cubic
+        setSpiderPosition(easeProgress);
+
+        if (progress < 1) {
+          requestAnimationFrame(animateSpider);
+        }
+      };
+
+      requestAnimationFrame(animateSpider);
+
       const timeout = setTimeout(() => setVisible(false), showDuration);
       return timeout;
     };
@@ -31,78 +51,102 @@ export function SpiderVFX() {
 
   return (
     <div className="pointer-events-none absolute inset-x-0 top-0 z-30 flex justify-center">
-      {/* LASER BEAM */}
-      <div className="relative h-72 w-px bg-linear-to-b from-white/60 via-white/20 to-transparent animate-[pulse_4s_ease-in-out_infinite]">
-        {/* SPIDER MARKER */}
-        <div className="signal-spider absolute top-0 left-1/2 mt-8 -translate-x-1/2">
-          <div
-            className="flex h-16 w-16 items-center justify-center rounded-full bg-black/70 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_rgba(255,255,255,0.12)] animate-[glitch-in_0.6s_ease-out]"
-          >
-            {/* INNER CORE */}
-            <div
-              className="relative h-8 w-8 rounded-full bg-linear-to-b from-white/70 to-white/20 shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-            >
-              {/* EYES */}
-              <div className="absolute inset-x-2 top-2 flex justify-between">
-                <span className="spider-eyes h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_8px_white]" />
-                <span className="spider-eyes h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_8px_white]" />
+      {/* WEB THREAD */}
+      <div className="relative h-screen w-px">
+        {/* Thread line */}
+        <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-linear-to-b from-transparent via-white/30 to-white/10 shadow-[0_0_10px_rgba(255,255,255,0.2)]" />
+
+        {/* Spider on thread */}
+        <div
+          className="absolute left-1/2 top-0 -translate-x-1/2 transition-transform duration-75 ease-out"
+          style={{
+            transform: `translateX(-50%) translateY(${spiderPosition * 80}vh)`,
+          }}
+        >
+          {/* SPIDER MODEL */}
+          <div className="relative">
+            {/* Spider body */}
+            <div className="relative flex items-center justify-center">
+              {/* Main body */}
+              <div className="relative h-12 w-8 rounded-full bg-black/80 border border-white/20 shadow-[0_0_20px_rgba(0,0,0,0.8)] backdrop-blur-sm">
+                {/* Abdomen */}
+                <div className="absolute -bottom-2 left-1/2 h-6 w-6 -translate-x-1/2 rounded-full bg-black/60 border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.6)]" />
+
+                {/* Eyes */}
+                <div className="absolute -top-1 left-1/2 flex -translate-x-1/2 gap-1">
+                  <div className="h-1 w-1 rounded-full bg-red-500 shadow-[0_0_4px_rgba(239,68,68,0.8)] animate-[spider-blink_3s_ease-in-out_infinite]" />
+                  <div className="h-1 w-1 rounded-full bg-red-500 shadow-[0_0_4px_rgba(239,68,68,0.8)] animate-[spider-blink_3s_ease-in-out_infinite_0.5s]" />
+                </div>
+
+                {/* Legs - left side */}
+                <div className="absolute -left-3 top-1 flex flex-col gap-0.5">
+                  <div className="h-3 w-0.5 origin-bottom rotate-12 bg-black/70 shadow-[0_0_3px_rgba(0,0,0,0.5)] animate-[leg-wiggle_2s_ease-in-out_infinite]" />
+                  <div className="h-2 w-0.5 origin-bottom -rotate-12 bg-black/70 shadow-[0_0_3px_rgba(0,0,0,0.5)] animate-[leg-wiggle_2s_ease-in-out_infinite_0.3s]" />
+                  <div className="h-3 w-0.5 origin-bottom rotate-6 bg-black/70 shadow-[0_0_3px_rgba(0,0,0,0.5)] animate-[leg-wiggle_2s_ease-in-out_infinite_0.6s]" />
+                  <div className="h-2 w-0.5 origin-bottom -rotate-6 bg-black/70 shadow-[0_0_3px_rgba(0,0,0,0.5)] animate-[leg-wiggle_2s_ease-in-out_infinite_0.9s]" />
+                </div>
+
+                {/* Legs - right side */}
+                <div className="absolute -right-3 top-1 flex flex-col gap-0.5">
+                  <div className="h-3 w-0.5 origin-bottom -rotate-12 bg-black/70 shadow-[0_0_3px_rgba(0,0,0,0.5)] animate-[leg-wiggle_2s_ease-in-out_infinite_0.2s]" />
+                  <div className="h-2 w-0.5 origin-bottom rotate-12 bg-black/70 shadow-[0_0_3px_rgba(0,0,0,0.5)] animate-[leg-wiggle_2s_ease-in-out_infinite_0.5s]" />
+                  <div className="h-3 w-0.5 origin-bottom -rotate-6 bg-black/70 shadow-[0_0_3px_rgba(0,0,0,0.5)] animate-[leg-wiggle_2s_ease-in-out_infinite_0.8s]" />
+                  <div className="h-2 w-0.5 origin-bottom rotate-6 bg-black/70 shadow-[0_0_3px_rgba(0,0,0,0.5)] animate-[leg-wiggle_2s_ease-in-out_infinite_1.1s]" />
+                </div>
+
+                {/* NXS Marking */}
+                <div className="absolute bottom-1 left-1/2 flex -translate-x-1/2 gap-0.5">
+                  <span className="text-[4px] text-white/60 font-bold">N</span>
+                  <span className="text-[4px] text-white/60 font-bold">X</span>
+                  <span className="text-[4px] text-white/60 font-bold">S</span>
+                </div>
               </div>
 
-              {/* MARKING */}
-              <div
-                className="absolute inset-x-1 bottom-1 flex justify-between text-[6px] text-white/40 font-semibold tracking-widest"
-              >
-                <span>/N</span>
-                <span>XS/</span>
-              </div>
+              {/* Web silk attachment point */}
+              <div className="absolute -top-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-white/40 shadow-[0_0_6px_rgba(255,255,255,0.6)] animate-pulse" />
             </div>
           </div>
+        </div>
+
+        {/* Web anchor point at top */}
+        <div className="absolute left-1/2 top-0 -translate-x-1/2">
+          <div className="h-2 w-2 rounded-full bg-white/20 shadow-[0_0_8px_rgba(255,255,255,0.4)] animate-pulse" />
         </div>
       </div>
 
       {/* ANIMATIONS */}
       <style jsx>{`
-        @keyframes glitch-in {
-          0% {
-            opacity: 0;
-            transform: translate(-50%, -20%) scale(0.8);
-            filter: blur(4px);
-          }
-          40% {
-            opacity: 1;
-            transform: translate(-50%, 0%) scale(1);
-            filter: blur(1px);
-          }
-          100% {
-            opacity: 1;
-            filter: blur(0px);
-          }
-        }
-
-        @keyframes pulse {
-          0%,
-          100% {
-            opacity: 0.35;
-          }
-          50% {
-            opacity: 0.65;
-          }
-        }
-
         @keyframes spider-blink {
-          0%,
-          90%,
-          100% {
+          0%, 90%, 100% {
             transform: scaleY(1);
           }
-          92%,
-          98% {
+          92%, 98% {
             transform: scaleY(0.2);
           }
         }
 
-        .spider-eyes {
-          animation: spider-blink 4.4s ease-in-out infinite;
+        @keyframes leg-wiggle {
+          0%, 100% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(5deg);
+          }
+          50% {
+            transform: rotate(-3deg);
+          }
+          75% {
+            transform: rotate(2deg);
+          }
+        }
+
+        @keyframes web-shimmer {
+          0%, 100% {
+            opacity: 0.3;
+          }
+          50% {
+            opacity: 0.6;
+          }
         }
       `}</style>
     </div>
