@@ -4,7 +4,7 @@ export function ConceptSection() {
   return (
     <section
       id="universe-routes"
-      className="relative flex min-h-screen items-center justify-center bg-black px-4 py-20"
+      className="relative flex min-h-screen items-center justify-center bg-dark px-4 py-16 sm:py-20"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(15,23,42,0.9),#020617_65%)]" />
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-zinc-500/60 to-transparent" />
@@ -14,7 +14,7 @@ export function ConceptSection() {
             EVERYONE FLIES. EVERYWHERE. BEYOND.
           </p>
           <h2 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl">
-            We do not ask who you are. We only ask where you want to go – even
+            We do not ask who you are. We only ask where you want to go - even
             if maps call it “off-limits”.
           </h2>
           <p className="max-w-xl text-sm text-zinc-300">
@@ -52,7 +52,7 @@ export function ConceptSection() {
               <div className="flex flex-col items-end gap-3 text-right text-[0.7rem] uppercase tracking-[0.2em] text-zinc-400">
                 <span>NO ECONOMY CLASS</span>
                 <span>ONLY NULLXES CLASS</span>
-                <span>ONLY ONE RULE – FLY</span>
+                <span>ONLY ONE RULE - FLY</span>
               </div>
             </div>
           </div>

@@ -31,7 +31,7 @@ export function UniverseRoutesSection() {
   return (
     <section
       id="fleet"
-      className="relative flex min-h-screen items-center justify-center bg-black px-4 py-20"
+      className="relative flex min-h-screen items-center justify-center bg-dark px-4 py-16 sm:py-20"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(24,24,27,0.9),#020617_70%)]" />
       <div className="relative z-10 flex w-full max-w-6xl flex-col gap-10 lg:flex-row">

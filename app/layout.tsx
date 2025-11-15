@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NULLXES AIRLANE – WE FLIGHT EVERYONE",
+  title: "NULLXES AIRLANE - WE FLIGHT EVERYONE",
   description:
-    "NULLXES AIRLANE 2026 – premium black glass universe airline created by MagistrTheOne.",
+    "NULLXES AIRLANE 2026 - premium black glass universe airline created by MagistrTheOne.",
 };
 
 export default function RootLayout({
@@ -24,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning className="bg-dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-zinc-50`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-dark text-zinc-50`}
       >
         {children}
       </body>

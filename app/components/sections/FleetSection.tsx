@@ -31,57 +31,73 @@ export function FleetSection() {
   return (
     <section
       id="experience"
-      className="relative flex min-h-screen items-center justify-center bg-black px-4 py-20"
+      className="relative flex min-h-screen items-center justify-center bg-dark px-4 sm:px-6 py-20 sm:py-24 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(24,24,27,0.9),#020617_70%)]" />
-      <div className="relative z-10 w-full max-w-6xl space-y-10">
+      {/* PREMIUM BACKGROUND */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.85),#000000_95%)] backdrop-blur-2xl" />
+
+      <div className="relative z-10 w-full max-w-6xl space-y-12">
+
+        {/* HEADER */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
-            <p className="text-[0.7rem] uppercase tracking-[0.2em] text-zinc-500">
+            <p className="text-[0.7rem] uppercase tracking-[0.2em] text-white/40">
               THE FLEET
             </p>
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl">
-              A line of ships built for villain-level calm and universe-scale
-              reach.
+            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl leading-tight">
+              A line of ships built for villain-level calm  
+              and universe-scale reach.
             </h2>
           </div>
-          <p className="max-w-md text-sm text-zinc-300">
-            Each NXS ship is a dark glass capsule tuned to erase noise, light
-            and friction. You board once and step out in a different layer of
-            reality.
+          <p className="max-w-md text-sm text-white/70 leading-relaxed">
+            Each NXS vessel is a silent black capsule designed to erase noise, 
+            light and friction. You step in once - and step out in a different 
+            layer of reality.
           </p>
         </div>
-        <div className="grid gap-5 md:grid-cols-2">
+
+        {/* GRID */}
+        <div className="grid gap-6 md:grid-cols-2">
           {fleet.map((ship) => (
             <div
               key={ship.name}
-              className="group glass-panel relative overflow-hidden border-zinc-700/70 bg-zinc-950/90 p-5"
+              className="glass-panel relative overflow-hidden bg-black/70 border-white/20 backdrop-blur-xl p-6 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.9)]"
             >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,244,245,0.08),transparent_70%)] opacity-80" />
-              <div className="relative flex flex-col gap-3">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_70%)]" />
+
+              <div className="relative flex flex-col gap-4">
+
                 <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-[0.7rem] uppercase tracking-[0.2em] text-zinc-400">
+                  {/* LEFT */}
+                  <div className="space-y-1">
+                    <p className="text-[0.7rem] uppercase tracking-[0.2em] text-white/40">
                       {ship.name}
                     </p>
-                    <p className="text-xs text-zinc-300">{ship.range}</p>
+                    <p className="text-xs text-white/60">{ship.range}</p>
                   </div>
-                  <div className="flex flex-col items-end gap-1 text-right text-[0.65rem] uppercase tracking-[0.18em] text-zinc-400">
-                    <span>{ship.capacity}</span>
-                    <span className="inline-flex items-center gap-1 text-emerald-300">
-                      <span className="h-1 w-6 bg-linear-to-r from-emerald-300 via-emerald-400 to-transparent" />
-                      <span>READY</span>
+
+                  {/* RIGHT */}
+                  <div className="flex flex-col items-end gap-1 text-right">
+                    <span className="text-[0.65rem] uppercase tracking-[0.18em] text-white/50">
+                      {ship.capacity}
+                    </span>
+
+                    {/* READY INDICATOR - white premium bar */}
+                    <span className="inline-flex items-center gap-2 text-[0.6rem] text-white/70">
+                      <span className="h-0.5 w-7 rounded-full bg-white shadow-[0_0_8px_white]" />
+                      READY
                     </span>
                   </div>
                 </div>
-                <p className="text-xs text-zinc-200">{ship.mood}</p>
+
+                <p className="text-xs text-white/80">{ship.mood}</p>
+
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
 }
-
-

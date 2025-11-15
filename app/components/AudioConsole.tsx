@@ -73,7 +73,7 @@ export function AudioConsole() {
             NULLXES AIRLANE AUDIO
           </span>
           <span className="text-[0.7rem] text-zinc-50">
-            {isPlaying ? "NOW PLAYING – nullxsingle.mp3" : "PLAY EXPERIENCE"}
+            {isPlaying ? "NOW PLAYING - nullxsingle.mp3" : "PLAY EXPERIENCE"}
           </span>
         </span>
       </button>
