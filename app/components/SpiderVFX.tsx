@@ -9,6 +9,11 @@ function SpiderCursor() {
   const [isClicking, setIsClicking] = useState(false);
 
   useEffect(() => {
+    // Only show cursor on desktop (hide on mobile)
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      return;
+    }
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -282,22 +287,36 @@ export function SpiderVFX() {
       setIsLoading(false);
     }, 2000);
 
+    // Check if mobile device
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
     const showDuration = 22000; // 22 sec visible
-    const interval = 4 * 60 * 1000; // every 4 min
+    const interval = isMobile ? 5 * 60 * 1000 : 4 * 60 * 1000; // every 5 min on mobile, 4 min on desktop
 
     const activate = () => {
       setVisible(true);
       setSpiderPosition(0); // Reset spider position
 
-      // Spider descent animation
-      const descentDuration = 8000; // 8 seconds to descend
+      // Spider descent animation (down and up on mobile)
+      const descentDuration = isMobile ? 12000 : 8000; // 12 seconds on mobile (down and up), 8 on desktop
       const startTime = Date.now();
 
       const animateSpider = () => {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / descentDuration, 1);
-        const easeProgress = 1 - Math.pow(1 - progress, 3); // Ease-out cubic
-        setSpiderPosition(easeProgress);
+
+        let position;
+        if (isMobile) {
+          // Mobile: go down then up (sine wave)
+          const normalizedProgress = progress * Math.PI; // 0 to π
+          position = Math.sin(normalizedProgress) * 0.8; // -0.8 to 0.8, but we want 0 to 0.8 to 0
+          position = Math.abs(position); // 0 to 0.8
+        } else {
+          // Desktop: just down with ease-out
+          position = 1 - Math.pow(1 - progress, 3);
+        }
+
+        setSpiderPosition(position);
 
         if (progress < 1) {
           requestAnimationFrame(animateSpider);
@@ -328,8 +347,8 @@ export function SpiderVFX() {
       {/* Loading Screen */}
       <LoadingSpider isLoading={isLoading} />
 
-      {/* Web Pattern Background */}
-      <WebPattern />
+      {/* Web Pattern Background - only on desktop */}
+      {typeof window !== 'undefined' && window.innerWidth >= 768 && <WebPattern />}
 
       {/* Spider Cursor */}
       <SpiderCursor />
@@ -341,7 +360,7 @@ export function SpiderVFX() {
       {visible && (
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 flex justify-center">
           {/* WEB THREAD */}
-          <div className="relative h-screen w-px hidden xs:block">
+          <div className="relative h-screen w-px">
             {/* Thread line */}
             <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-linear-to-b from-transparent via-white/30 to-white/10 shadow-[0_0_10px_rgba(255,255,255,0.2)]" />
 
@@ -349,7 +368,7 @@ export function SpiderVFX() {
             <div
               className="absolute left-1/2 top-0 -translate-x-1/2 transition-transform duration-75 ease-out"
               style={{
-                transform: `translateX(-50%) translateY(${spiderPosition * 80}vh)`,
+                transform: `translateX(-50%) translateY(${spiderPosition * (typeof window !== 'undefined' && window.innerWidth < 768 ? 60 : 80)}vh)`,
               }}
             >
               {/* SPIDER MODEL */}
